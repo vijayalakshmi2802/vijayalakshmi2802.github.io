@@ -1,0 +1,73 @@
+.contact__grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 54px;
+  align-items: start;
+}
+
+.contact__info {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact__row {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--navy-800);
+  transition: color 0.2s ease;
+}
+.contact__row svg { color: var(--gold-500); flex-shrink: 0; }
+.contact__row:hover { color: var(--gold-500); }
+
+.contact__form-card { padding: 34px; }
+
+.contact__form { display: flex; flex-direction: column; gap: 16px; }
+
+.contact__field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.contact__field { display: flex; flex-direction: column; gap: 7px; }
+
+.contact__field span {
+  font-size: 12.5px; font-weight: 600; letter-spacing: 0.02em;
+  color: var(--slate-600); text-transform: uppercase;
+}
+
+.contact__field input,
+.contact__field select,
+.contact__field textarea {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--fog-050);
+  color: var(--navy-950);
+  resize: vertical;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact__field input:focus,
+.contact__field select:focus,
+.contact__field textarea:focus {
+  outline: none;
+  border-color: var(--gold-500);
+  box-shadow: 0 0 0 3px var(--gold-050);
+}
+
+.contact__submit { margin-top: 4px; align-self: flex-start; }
+
+.contact__sent {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 14px;
+  padding: 20px 4px;
+  font-size: 14.5px; color: var(--slate-600); line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .contact__grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact__field-row { grid-template-columns: 1fr; }
+}
