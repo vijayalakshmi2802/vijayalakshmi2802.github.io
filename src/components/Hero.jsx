@@ -6,6 +6,10 @@ import Counter from "./Counter";
 import NetworkMotif from "./NetworkMotif";
 import "./Hero.css";
 
+import profileImage from "../assets/viji.jpeg";
+
+<img src={profileImage} alt="Profile" />
+
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 26 },
   animate: { opacity: 1, y: 0 },
@@ -133,7 +137,7 @@ export default function Hero() {
           {/* PROFILE IMAGE */}
           <div className="hero__profile">
             <img
-              src="viji.jpeg"
+              src={profileImage}
               alt="Vijayalakshmi B - Technical Trainer"
               className="hero__profile-image"
             />
