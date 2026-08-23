@@ -133,7 +133,7 @@ export default function Hero() {
           {/* PROFILE IMAGE */}
           <div className="hero__profile">
             <img
-              src="/viji.jpeg"
+              src="viji.jpeg"
               alt="Vijayalakshmi B - Technical Trainer"
               className="hero__profile-image"
             />
