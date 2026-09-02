@@ -1,82 +1,72 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Code2, Mail } from "lucide-react";
-import { LinkedinIcon, GithubIcon } from "./BrandIcons";
-import { stats, profile } from "../data/content";
-import Counter from "./Counter";
-import NetworkMotif from "./NetworkMotif";
+import { profile } from "../data/content";
 import "./Hero.css";
 
-import profileImage from "../assets/viji.jpeg";
-
-<img src={profileImage} alt="Profile" />
-
 const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 26 },
-  animate: { opacity: 1, y: 0 },
+  initial: {
+    opacity: 0,
+    y: 25,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+  },
   transition: {
     duration: 0.7,
     delay,
-    ease: [0.22, 1, 0.36, 1],
   },
 });
 
 export default function Hero() {
   return (
     <section id="top" className="hero">
-      <NetworkMotif className="hero__motif" variant="hero" />
-
       <div className="container hero__grid">
 
-        {/* LEFT SIDE */}
         <div className="hero__content">
 
           <motion.div
             className="eyebrow eyebrow--light"
             {...fadeUp(0)}
           >
-            Technical Trainer • Placement • Cloud • Programming
+            AWS • Azure • Linux • DevOps
           </motion.div>
 
           <motion.h1
             className="hero__title"
             {...fadeUp(0.08)}
           >
-            Building{" "}
-            <span>Industry-Ready Talent</span>{" "}
-            Through Practical Technical Training
+            Building Reliable
+            <span> Cloud & DevOps Infrastructure</span>
           </motion.h1>
 
           <motion.p
             className="hero__desc"
             {...fadeUp(0.16)}
           >
-            I help engineering students, faculty members, and working
-            professionals build practical technical skills through
-            structured, hands-on, and industry-oriented training.
+            I am a Computer Science graduate focused on Cloud,
+            DevOps and Infrastructure Engineering, with hands-on
+            experience building and troubleshooting AWS and Azure
+            environments.
           </motion.p>
 
-          {/* BUTTONS */}
           <motion.div
             className="hero__ctas"
             {...fadeUp(0.24)}
           >
-            <a
-              href="#contact"
-              className="btn btn-gold"
-            >
-              Partner With Me
-              <ArrowRight size={16} />
+            <a href="#projects" className="btn btn-gold">
+              View Projects →
             </a>
 
             <a
-              href="#programs"
+              href={profile.resume}
               className="btn btn-outline-light"
+              target="_blank"
+              rel="noreferrer"
             >
-              Explore Training Programs
+              Download Resume ↓
             </a>
           </motion.div>
 
-          {/* SOCIAL LINKS */}
           <motion.div
             className="hero__social"
             {...fadeUp(0.3)}
@@ -85,9 +75,7 @@ export default function Hero() {
               href={profile.linkedin}
               target="_blank"
               rel="noreferrer"
-              aria-label="LinkedIn"
             >
-              <LinkedinIcon size={17} />
               LinkedIn
             </a>
 
@@ -95,83 +83,50 @@ export default function Hero() {
               href={profile.github}
               target="_blank"
               rel="noreferrer"
-              aria-label="GitHub"
             >
-              <GithubIcon size={17} />
               GitHub
             </a>
 
-            <a
-              href={profile.leetcode}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LeetCode"
-            >
-              <Code2 size={17} />
-              LeetCode
-            </a>
-
-            <a
-              href={`mailto:${profile.email}`}
-              aria-label="Email"
-            >
-              <Mail size={17} />
+            <a href={`mailto:${profile.email}`}>
               Email
             </a>
           </motion.div>
 
         </div>
 
-        {/* RIGHT SIDE */}
         <motion.div
-          className="hero__visual"
+          className="hero__stats"
           initial={{ opacity: 0, x: 24 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{
-            duration: 0.8,
-            delay: 0.2,
-            ease: [0.22, 1, 0.36, 1],
-          }}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
-
-          {/* PROFILE IMAGE */}
-          <div className="hero__profile">
-            <img
-              src={profileImage}
-              alt="Vijayalakshmi B - Technical Trainer"
-              className="hero__profile-image"
-            />
+          <div className="hero__stat">
+            <div className="hero__stat-value">AWS</div>
+            <div className="hero__stat-label">
+              Cloud Platform
+            </div>
           </div>
 
-          {/* STATISTICS */}
-          <div className="hero__stats">
-
-            {stats.map((s, i) => (
-              <div
-                className="hero__stat"
-                key={s.label}
-                style={{
-                  transitionDelay: `${i * 60}ms`,
-                }}
-              >
-
-                <div className="hero__stat-value">
-                  <Counter
-                    value={s.value}
-                    suffix={s.suffix}
-                    decimals={s.decimals || 0}
-                  />
-                </div>
-
-                <div className="hero__stat-label">
-                  {s.label}
-                </div>
-
-              </div>
-            ))}
-
+          <div className="hero__stat">
+            <div className="hero__stat-value">Azure</div>
+            <div className="hero__stat-label">
+              Cloud Platform
+            </div>
           </div>
 
+          <div className="hero__stat">
+            <div className="hero__stat-value">Linux</div>
+            <div className="hero__stat-label">
+              Infrastructure
+            </div>
+          </div>
+
+          <div className="hero__stat">
+            <div className="hero__stat-value">DevOps</div>
+            <div className="hero__stat-label">
+              Currently Learning
+            </div>
+          </div>
         </motion.div>
 
       </div>
